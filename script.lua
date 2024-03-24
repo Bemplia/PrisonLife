@@ -29,6 +29,22 @@ MainSection:NewButton("Kill me", "", function()
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 
+MainSection:NewButton("SpawnPoint where u death", "", function()
+while wait() do
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+local KillPart = Instance.new("Part", workspace)
+KillPart.CanCollide = false;
+KillPart.Anchored = true;
+KillPart.Transparency = 1;
+KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+KillPart.Name = "Kill"
+wait(2.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
+workspace.Kill:Destroy()
+end
+end
+end)
+
 MainSection:NewButton("Mega camera max zoom", "", function()
 game.Players.LocalPlayer.CameraMaxZoomDistance = 1000
 end)
