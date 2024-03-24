@@ -109,7 +109,7 @@ CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
     
-CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.L, function()
+CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 wait(0.1)
 for i = 0, 9 do
