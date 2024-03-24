@@ -111,7 +111,7 @@ end)
     
 CombatSection:NewButton("Kill target", "", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
-wait(0.2)
+wait(0.1)
 for i = 0, 9 do
 local args = {
     [1] = game.Players[target]
