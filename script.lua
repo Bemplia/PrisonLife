@@ -129,8 +129,12 @@ MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jump)
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
 
-MovementSection:NewToggle("Noclip", "", function(noclip)
-while wait() do
+MovementSection:NewButton("Disable Noclip", "", function()
+noclip = false
+end)
+
+MovementSection:NewButton("Noclip", "", function()
+while true do
 game.Players.LocalPlayer.Character.Head.CanCollide = false
 game.Players.LocalPlayer.Character.Torso.CanCollide = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
@@ -139,6 +143,7 @@ game.Players.LocalPlayer.Character.Head.CanCollide = true
 game.Players.LocalPlayer.Character.Torso.CanCollide = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
 break
+wait()
 end
 end
 end)
@@ -190,5 +195,3 @@ end)
 GuiSection:NewKeybind("Toggle Gui", "", Enum.KeyCode.L, function()
 Library:ToggleUI()
 end)
-
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/h/main/script.lua"))()
