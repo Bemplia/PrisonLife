@@ -110,8 +110,9 @@ target = tar
 end)
     
 CombatSection:NewButton("Kill target", "", function()
-for i = 0, 9 do
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
+wait(0.2)
+for i = 0, 9 do
 local args = {
     [1] = game.Players[target]
 }    
@@ -190,4 +191,4 @@ GuiSection:NewKeybind("Toggle Gui", "", Enum.KeyCode.L, function()
 Library:ToggleUI()
 end)
 
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/prisonlife2/main/script.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/h/main/script.lua"))()
