@@ -129,22 +129,11 @@ MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jump)
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
 
-MovementSection:NewButton("Disable Noclip", "", function()
-noclip = false
-end)
-
 MovementSection:NewButton("Noclip", "", function()
-while true do
+while wait() do
 game.Players.LocalPlayer.Character.Head.CanCollide = false
 game.Players.LocalPlayer.Character.Torso.CanCollide = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-if not noclip then
-game.Players.LocalPlayer.Character.Head.CanCollide = true
-game.Players.LocalPlayer.Character.Torso.CanCollide = true
-game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
-break
-wait()
-end
 end
 end)
 
