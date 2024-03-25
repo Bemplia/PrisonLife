@@ -130,7 +130,7 @@ CombatSection:NewTextBox("Friend", "", function(fr)
 friend = fr
 end)
     
-CombatSection:NewKeybind("Kill target", "", function()
+CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 wait(0.2)
 for i = 0, 19 do
