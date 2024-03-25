@@ -1,6 +1,8 @@
-local walkspeed = 16
+local walkspeed = 24
 local target = ""
-local friend = ""
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -8,6 +10,9 @@ local Window = Library.CreateLib("Prison Life v2 (By arbuzik.new)", "Ocean")
 
 local Main = Window:NewTab("Main")
 local Combat = Window:NewTab("Combat")
+local M9 = Window:NewTab("M9")
+local Remington870 = Window:NewTab("Remington 870")
+local AK47 = Window:NewTab("AK-47")
 local Movement = Window:NewTab("Movement")
 local Teleport = Window:NewTab("Teleport")
 local Scripts = Window:NewTab("Scripts")
@@ -16,6 +21,9 @@ local Creator = Window:NewTab("Creator")
 
 local MainSection = Main:NewSection("Main")
 local CombatSection = Combat:NewSection("Combat")
+local M9_Section = M9:NewSection("M9")
+local Remington870_Section = Remington870:NewSection("Remington 870")
+local AK47_Section = AK47:NewSection("AK-47")
 local MovementSection = Movement:NewSection("Movement")
 local TeleportSection = Teleport:NewSection("Teleport")
 local ScriptsSection = Scripts:NewSection("Scripts")
@@ -154,6 +162,102 @@ end
 end
 end)
 
+M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
+M9_modifire["AutoFire"] = fire
+end)
+
+M9_Section:NewTextBox("Bullets", "", function(bullets)
+M9_modifire["Bullets"] = bullets
+end)
+
+M9_Section:NewTextBox("Range", "", function(range)
+M9_modifire["Range"] = range
+end)
+
+M9_Section:NewTextBox("FireRate", "", function(firerate)
+M9_modifire["FireRate"] = firerate
+end)
+
+M9_Section:NewTextBox("Spread", "", function(spread)
+M9_modifire["Spread"] = spread
+end)
+
+M9_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+M9_modifire["MaxAmmo"] = maxammo
+end)
+
+M9_Section:NewTextBox("Damage FIXED", "", function(damage)
+M9_modifire["Damage"] = damage
+end)
+
+M9_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+M9_modifire["ReloadTime"] = reloadtime
+end)
+
+Remington870_Section:NewTextBox("AutoFire", "true/false", function(fire)
+Remington870_modifire["AutoFire"] = fire
+end)
+    
+Remington870_Section:NewTextBox("Bullets", "", function(bullets)
+Remington870_modifire["Bullets"] = bullets
+end)
+    
+Remington870_Section:NewTextBox("Range", "", function(range)
+Remington870_modifire["Range"] = range
+end)
+    
+Remington870_Section:NewTextBox("FireRate", "", function(firerate)
+Remington870_modifire["FireRate"] = firerate
+end)
+    
+Remington870_Section:NewTextBox("Spread", "", function(spread)
+Remington870_modifire["Spread"] = spread
+end)
+    
+Remington870_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+Remington870_modifire["MaxAmmo"] = maxammo
+end)
+    
+Remington870_Section:NewTextBox("Damage FIXED", "", function(damage)
+Remington870_modifire["Damage"] = damage
+end)
+    
+Remington870_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+Remington870_modifire["ReloadTime"] = reloadtime
+end)
+
+AK47_Section:NewTextBox("AutoFire", "true/false", function(fire)
+AK47_modifire["AutoFire"] = fire
+end)
+    
+AK47_Section:NewTextBox("Bullets", "", function(bullets)
+AK47_modifire["Bullets"] = bullets
+end)
+    
+AK47_Section:NewTextBox("Range", "", function(range)
+AK47_modifire["Range"] = range
+end)
+    
+AK47_Section:NewTextBox("FireRate", "", function(firerate)
+AK47_modifire["FireRate"] = firerate
+end)
+    
+AK47_Section:NewTextBox("Spread", "", function(spread)
+AK47_modifire["Spread"] = spread
+end)
+    
+AK47_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+AK47_modifire["MaxAmmo"] = maxammo
+end)
+    
+AK47_Section:NewTextBox("Damage FIXED", "", function(damage)
+AK47_modifire["Damage"] = damage
+end)
+    
+AK47_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+AK47_modifire["ReloadTime"] = reloadtime
+end)
+
 MovementSection:NewTextBox("WalkSpeed", "Change your walkspeed", function(walk)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walk
 walkspeed = walk
@@ -173,9 +277,9 @@ end)
 
 MovementSection:NewButton("Anti tazer", "", function()
 while wait(0.2) do
-pcall (function()
+if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 0 then
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkspeed
-end)
+end
 end
 end)
 
