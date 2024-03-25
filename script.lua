@@ -267,7 +267,7 @@ M9_modifire["FireRate"] = firerate
 end)
 
 M9_Section:NewTextBox("Spread", "", function(spread)
-SpreadM9 =spread
+SpreadM9 = spread
 local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Spread"] = spread
 end)
