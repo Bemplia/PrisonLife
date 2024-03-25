@@ -31,27 +31,60 @@ MainSection:NewButton("Rejoin", "", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
 
-MainSection:NewButton("SpawnPoint where u death", "", function()
+MainSection:NewButton("Quick respawn", "", function()
 while wait() do
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-    local KillPart = Instance.new("Part", workspace)
-    KillPart.CanCollide = false;
-    KillPart.Anchored = true;
-    KillPart.Transparency = 1;
-    KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-    KillPart.Name = "Kill"
-    wait(1.5)
+    local TpPart = Instance.new("Part", workspace)
+    TpPart.CanCollide = false;
+    TpPart.Anchored = true;
+    TpPart.Transparency = 1;
+    TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+    TpPart.Name = "Kill"
+    local args = {
+        [1] = "Bright blue"
+    }
+    workspace.Remote.TeamEvent:FireServer(unpack(args))
+    local args = {
+        [1] = "Bright orange"
+    }
+    workspace.Remote.TeamEvent:FireServer(unpack(args))
+    wait(0.5)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
     workspace.Kill:Destroy()
 end
 end
 end)
 
+MainSection:NewButton("Spawn KeyCarts and M9", "", function()
+for i = 0, 9 do
+TpPart.CanCollide = false;
+TpPart.Anchored = true;
+TpPart.Transparency = 1;
+TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+TpPart.Name = "Spawn"
+local args = {
+    [1] = "Bright blue"
+}
+workspace.Remote.TeamEvent:FireServer(unpack(args))
+wait(0.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
+wait(0.2)
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+local args = {
+    [1] = "Bright orange"
+}
+workspace.Remote.TeamEvent:FireServer(unpack(args))
+end
+wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
+workspace.Tp:Destroy()
+end)
+
 MainSection:NewButton("Kill me", "", function()
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 
-MainSection:NewButton("Mega camera max zoom", "", function()
+MainSection:NewButton("Camera hack", "", function()
 game.Players.LocalPlayer.CameraMaxZoomDistance = 1000
 end)
 
