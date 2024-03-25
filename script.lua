@@ -113,6 +113,7 @@ workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
 wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
+wait(0.3)
 workspace.Spawn:Destroy()
 end)
 
