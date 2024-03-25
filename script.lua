@@ -125,10 +125,6 @@ end)
 CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
-
-CombatSection:NewTextBox("Friend", "", function(fr)
-friend = fr
-end)
     
 CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
@@ -146,8 +142,6 @@ while wait(0.5) do
 for i, v in pairs(game.Players:GetChildren()) do
 if v.Name == game.Players.LocalPlayer.Name then
 print("Im not killing me.")
-elseif v.Name == game.Players[friend].Name then
-print("im not killing friend")
 else
 for i = 0, 9 do
 local args = {
