@@ -1,5 +1,6 @@
 walkspeed = 16
-local noclip;
+target = ""
+frined = ""
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -25,24 +26,24 @@ MainSection:NewButton("Rejoin", "", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
 
-MainSection:NewButton("Kill me", "", function()
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
-
 MainSection:NewButton("SpawnPoint where u death", "", function()
 while wait() do
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-local KillPart = Instance.new("Part", workspace)
-KillPart.CanCollide = false;
-KillPart.Anchored = true;
-KillPart.Transparency = 1;
-KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-KillPart.Name = "Kill"
-wait(2)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
-workspace.Kill:Destroy()
+    local KillPart = Instance.new("Part", workspace)
+    KillPart.CanCollide = false;
+    KillPart.Anchored = true;
+    KillPart.Transparency = 1;
+    KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+    KillPart.Name = "Kill"
+    wait(1.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
+    workspace.Kill:Destroy()
 end
 end
+end)
+
+MainSection:NewButton("Kill me", "", function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 
 MainSection:NewButton("Mega camera max zoom", "", function()
@@ -124,16 +125,38 @@ end)
 CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
+
+CombatSection:NewTextBox("Friend", "", function(fr)
+friend = fr
+end)
     
-CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
+CombatSection:NewKeybind("Kill target", "", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 wait(0.2)
-for i = 0, 9 do
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
+for i = 0, 19 do
 local args = {
     [1] = game.Players[target]
 }    
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end)
+
+CombatSection:NewButton("Kill aura", "", function()
+while wait(0.5) do
+for i, v in pairs(game.Players:GetChildren()) do
+if v.Name == game.Players.LocalPlayer.Name then
+print("Im not killing me.")
+elseif v.Name == game.Players[friend].Name then
+print("im not killing friend")
+else
+for i = 0, 9 do
+local args = {
+    [1] = game.Players[v.Name]
+}    
+game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
+end
 end
 end)
 
@@ -146,11 +169,22 @@ MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jump)
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
 
+MovementSection:NewButton("Disable Noclip", "", function()
+noclip = false
+end)
+
 MovementSection:NewButton("Noclip", "", function()
-while wait() do
+while true do
 game.Players.LocalPlayer.Character.Head.CanCollide = false
 game.Players.LocalPlayer.Character.Torso.CanCollide = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+if not noclip then
+game.Players.LocalPlayer.Character.Head.CanCollide = true
+game.Players.LocalPlayer.Character.Torso.CanCollide = true
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
+break
+wait()
+end
 end
 end)
 
