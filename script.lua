@@ -292,7 +292,7 @@ end)
 
 M9_Section:NewToggle("Use this config for M9", "", function(state)
 if state then
-    while wait(1)
+    while wait(1) do
         pcall (function()
             local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
             M9_modifire["AutoFire"] = AutoFireM9
@@ -363,7 +363,7 @@ end)
 
 Remington870_Section:NewToggle("Use this config for Remington 870", "", function(state)
     if state then
-        while wait(1)
+        while wait(1) do
             pcall (function()
                 local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
                 Remington870_modifire["AutoFire"] = AutoFireRemington870
@@ -434,7 +434,7 @@ end)
 
 Remington870_Section:NewToggle("Use this config for AK-47", "", function(state)
     if state then
-        while wait(1)
+        while wait(1) do
             pcall (function()
                 local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
                 AK47_modifire["AutoFire"] = AutoFireAK47
