@@ -1,6 +1,6 @@
-walkspeed = 16
-target = ""
-friend = ""
+local walkspeed = 16
+local target = ""
+local friend = ""
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -126,7 +126,9 @@ CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
 
-
+CombatSection:NewTextBox("Friend", "", function(fr)
+friend = fr
+end)
     
 CombatSection:NewKeybind("Kill target", "", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
@@ -139,7 +141,24 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
-
+CombatSection:NewButton("Kill aura", "", function()
+while wait(0.5) do
+for i, v in pairs(game.Players:GetChildren()) do
+if v.Name == game.Players.LocalPlayer.Name then
+print("Im not killing me.")
+elseif v.Name == game.Players[friend].Name then
+print("im not killing friend")
+else
+for i = 0, 9 do
+local args = {
+    [1] = game.Players[v.Name]
+}    
+game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
+end
+end
+end)
 
 MovementSection:NewTextBox("WalkSpeed", "Change your walkspeed", function(walk)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walk
@@ -150,22 +169,11 @@ MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jump)
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
 
-MovementSection:NewButton("Disable Noclip", "", function()
-noclip = false
-end)
-
 MovementSection:NewButton("Noclip", "", function()
-while true do
+while wait() do
 game.Players.LocalPlayer.Character.Head.CanCollide = false
 game.Players.LocalPlayer.Character.Torso.CanCollide = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-if not noclip then
-game.Players.LocalPlayer.Character.Head.CanCollide = true
-game.Players.LocalPlayer.Character.Torso.CanCollide = true
-game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = true
-break
-wait()
-end
 end
 end)
 
@@ -216,5 +224,3 @@ end)
 GuiSection:NewKeybind("Toggle Gui", "", Enum.KeyCode.L, function()
 Library:ToggleUI()
 end)
-
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/PrisonLife/main/script.lua"))()
