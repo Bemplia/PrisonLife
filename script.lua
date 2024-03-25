@@ -1,9 +1,9 @@
---------------------------
+
 local walkspeed = 24
 local target = ""
 local spawn = false
 local killaura = false
---------------------------
+
 local AutoFireM9 = false
 local BulletsM9 = 1
 local RangeM9 = 600
@@ -12,7 +12,7 @@ local SpreadM9 = 11
 local MaxAmmoM9 = 15
 local DamageM9 = 10
 local ReloadTimeM9 = 2
---------------------------
+
 local AutoFireRemington870 = false
 local BulletsRemington870 = 5
 local RangeRemington870 = 400
@@ -21,7 +21,7 @@ local SpreadRemington870 = 3
 local MaxAmmoRemington870 = 6
 local DamageRemington870 = 15
 local ReloadTimeRemington870 = 4
---------------------------
+
 local AutoFireAK47 = false
 local BulletsAK47 = 1
 local RangeAK47 = 800
@@ -30,7 +30,6 @@ local SpreadAK47 = 14
 local MaxAmmoAK47 = 30
 local DamageAK47 = 11
 local ReloadTimeAK47 = 2
---------------------------
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
