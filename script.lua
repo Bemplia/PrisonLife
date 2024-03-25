@@ -38,7 +38,7 @@ KillPart.Anchored = true;
 KillPart.Transparency = 1;
 KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 KillPart.Name = "Kill"
-wait(1)
+wait(2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
 workspace.Kill:Destroy()
 end
@@ -129,6 +129,7 @@ CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 wait(0.2)
 for i = 0, 9 do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 local args = {
     [1] = game.Players[target]
 }    
