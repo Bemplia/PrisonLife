@@ -61,7 +61,7 @@ wait()
 end
 end)
 
-MainSection:NewButton("Spawn KeyCarts and M9", "", function()
+MainSection:NewButton("Spawn KeyCards and M9", "", function()
 spawn = false
 for i = 0, 9 do
 local TpPart = Instance.new("Part", workspace)
@@ -86,7 +86,6 @@ end
 wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 workspace.Spawn:Destroy()
-spawn = true
 end)
 
 MainSection:NewButton("Kill me", "", function()
