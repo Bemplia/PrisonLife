@@ -38,7 +38,7 @@ KillPart.Anchored = true;
 KillPart.Transparency = 1;
 KillPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 KillPart.Name = "Kill"
-wait(1.5)
+wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
 workspace.Kill:Destroy()
 end
