@@ -1,8 +1,5 @@
 local walkspeed = 24
 local target = ""
-local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
-local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
-local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -137,7 +134,7 @@ end)
 CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 wait(0.2)
-for i = 0, 19 do
+for i = 0, 14 do
 local args = {
     [1] = game.Players[target]
 }    
@@ -151,7 +148,7 @@ for i, v in pairs(game.Players:GetChildren()) do
 if v.Name == game.Players.LocalPlayer.Name then
 print("Im not killing me.")
 else
-for i = 0, 9 do
+for i = 0, 14 do
 local args = {
     [1] = game.Players[v.Name]
 }    
@@ -163,98 +160,122 @@ end
 end)
 
 M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["AutoFire"] = fire
 end)
 
 M9_Section:NewTextBox("Bullets", "", function(bullets)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Bullets"] = bullets
 end)
 
 M9_Section:NewTextBox("Range", "", function(range)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Range"] = range
 end)
 
 M9_Section:NewTextBox("FireRate", "", function(firerate)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["FireRate"] = firerate
 end)
 
 M9_Section:NewTextBox("Spread", "", function(spread)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Spread"] = spread
 end)
 
 M9_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["MaxAmmo"] = maxammo
 end)
 
 M9_Section:NewTextBox("Damage FIXED", "", function(damage)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Damage"] = damage
 end)
 
 M9_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["ReloadTime"] = reloadtime
 end)
 
 Remington870_Section:NewTextBox("AutoFire", "true/false", function(fire)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["AutoFire"] = fire
 end)
     
 Remington870_Section:NewTextBox("Bullets", "", function(bullets)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["Bullets"] = bullets
 end)
     
 Remington870_Section:NewTextBox("Range", "", function(range)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["Range"] = range
 end)
     
 Remington870_Section:NewTextBox("FireRate", "", function(firerate)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["FireRate"] = firerate
 end)
     
 Remington870_Section:NewTextBox("Spread", "", function(spread)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["Spread"] = spread
 end)
     
 Remington870_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["MaxAmmo"] = maxammo
 end)
     
 Remington870_Section:NewTextBox("Damage FIXED", "", function(damage)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["Damage"] = damage
 end)
     
 Remington870_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
 Remington870_modifire["ReloadTime"] = reloadtime
 end)
 
 AK47_Section:NewTextBox("AutoFire", "true/false", function(fire)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["AutoFire"] = fire
 end)
     
 AK47_Section:NewTextBox("Bullets", "", function(bullets)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["Bullets"] = bullets
 end)
     
 AK47_Section:NewTextBox("Range", "", function(range)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["Range"] = range
 end)
     
 AK47_Section:NewTextBox("FireRate", "", function(firerate)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["FireRate"] = firerate
 end)
     
 AK47_Section:NewTextBox("Spread", "", function(spread)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["Spread"] = spread
 end)
     
 AK47_Section:NewTextBox("MaxAmmo FIXED", "", function(maxammo)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["MaxAmmo"] = maxammo
 end)
     
 AK47_Section:NewTextBox("Damage FIXED", "", function(damage)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["Damage"] = damage
 end)
     
 AK47_Section:NewTextBox("ReloadTime FIXED", "", function(reloadtime)
+local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
 AK47_modifire["ReloadTime"] = reloadtime
 end)
 
