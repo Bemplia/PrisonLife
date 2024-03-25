@@ -85,7 +85,7 @@ workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
 wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
-workspace.Tp:Destroy()
+workspace.Spawn:Destroy()
 spawn = true
 end)
 
@@ -94,12 +94,11 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 
 MainSection:NewButton("Camera hack", "", function()
-game.Players.LocalPlayer.CameraMaxZoomDistance = 1000
-game.Players.LocalPlayer.DevCameraOcclusion = Inviscam
+game.Players.LocalPlayer.CameraMaxZoomDistance = 99999
 end)
 
 MainSection:NewButton("No Fog", "", function()
-game:GetService("Lighting").FogEnd = 9999
+game:GetService("Lighting").FogEnd = 99999
 end)
 
 MainSection:NewButton("Swap team to Guards", "", function()
