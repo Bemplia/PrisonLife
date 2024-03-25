@@ -1,9 +1,8 @@
---------------------------
 local walkspeed = 24
 local target = ""
 local spawn = false
 local killaura = false
---------------------------
+
 local AutoFireM9 = false
 local BulletsM9 = 1
 local RangeM9 = 600
@@ -12,7 +11,7 @@ local SpreadM9 = 11
 local MaxAmmoM9 = 15
 local DamageM9 = 10
 local ReloadTimeM9 = 2
---------------------------
+
 local AutoFireRemington870 = false
 local BulletsRemington870 = 5
 local RangeRemington870 = 400
@@ -21,7 +20,7 @@ local SpreadRemington870 = 3
 local MaxAmmoRemington870 = 6
 local DamageRemington870 = 15
 local ReloadTimeRemington870 = 4
---------------------------
+
 local AutoFireAK47 = false
 local BulletsAK47 = 1
 local RangeAK47 = 800
@@ -30,7 +29,6 @@ local SpreadAK47 = 14
 local MaxAmmoAK47 = 30
 local DamageAK47 = 11
 local ReloadTimeAK47 = 2
---------------------------
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -268,7 +266,7 @@ M9_modifire["FireRate"] = firerate
 end)
 
 M9_Section:NewTextBox("Spread", "", function(spread)
-SpreadM9 =spread
+SpreadM9 = spread
 local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
 M9_modifire["Spread"] = spread
 end)
@@ -293,7 +291,7 @@ end)
 
 M9_Section:NewToggle("Use this config for M9", "", function(state)
 if state then
-    while wait(1)
+    while wait(1) do
         pcall (function()
             local M9_modifire = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
             M9_modifire["AutoFire"] = AutoFireM9
@@ -364,7 +362,7 @@ end)
 
 Remington870_Section:NewToggle("Use this config for Remington 870", "", function(state)
     if state then
-        while wait(1)
+        while wait(1) do
             pcall (function()
                 local Remington870_modifire = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
                 Remington870_modifire["AutoFire"] = AutoFireRemington870
@@ -435,7 +433,7 @@ end)
 
 AK47_Section:NewToggle("Use this config for AK-47", "", function(state)
     if state then
-        while wait(1)
+        while wait(1) do
             pcall (function()
                 local AK47_modifire = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
                 AK47_modifire["AutoFire"] = AutoFireAK47
