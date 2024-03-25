@@ -139,24 +139,7 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
-CombatSection:NewButton("Kill aura", "", function()
-while wait(0.5) do
-for i, v in pairs(game.Players:GetChildren()) do
-if v.Name == game.Players.LocalPlayer.Name then
-print("Im not killing me.")
-elseif v.Name == game.Players[friend].Name then
-print("im not killing friend")
-else
-for i = 0, 9 do
-local args = {
-    [1] = game.Players[v.Name]
-}    
-game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-end
-end
-end
-end
-end)
+
 
 MovementSection:NewTextBox("WalkSpeed", "Change your walkspeed", function(walk)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walk
