@@ -50,7 +50,7 @@ if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
         [1] = "Bright orange"
     }
     workspace.Remote.TeamEvent:FireServer(unpack(args))
-    wait(0.5)
+    wait(0.2)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
     workspace.Kill:Destroy()
 end
@@ -85,6 +85,7 @@ workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
 wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
+wait(0.2)
 workspace.Spawn:Destroy()
 end)
 
