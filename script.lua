@@ -1,5 +1,6 @@
 local walkspeed = 24
 local target = ""
+local spawn = false
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -32,7 +33,8 @@ game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Playe
 end)
 
 MainSection:NewButton("Quick respawn", "", function()
-while wait() do
+spawn = true
+while spawn do
 if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
     local TpPart = Instance.new("Part", workspace)
     TpPart.CanCollide = false;
@@ -52,11 +54,17 @@ if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
     workspace.Kill:Destroy()
 end
+if spawn == false then
+break
+end
+wait()
 end
 end)
 
 MainSection:NewButton("Spawn KeyCarts and M9", "", function()
+spawn = false
 for i = 0, 9 do
+local TpPart = Instance.new("Part", workspace)
 TpPart.CanCollide = false;
 TpPart.Anchored = true;
 TpPart.Transparency = 1;
@@ -78,6 +86,7 @@ end
 wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 workspace.Tp:Destroy()
+spawn = true
 end)
 
 MainSection:NewButton("Kill me", "", function()
@@ -86,6 +95,11 @@ end)
 
 MainSection:NewButton("Camera hack", "", function()
 game.Players.LocalPlayer.CameraMaxZoomDistance = 1000
+game.Players.LocalPlayer.DevCameraOcclusion = Inviscam
+end)
+
+MainSection:NewButton("No Fog", "", function()
+game:GetService("Lighting").FogEnd = 9999
 end)
 
 MainSection:NewButton("Swap team to Guards", "", function()
