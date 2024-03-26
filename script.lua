@@ -200,6 +200,40 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
 workspace.Tp:Destroy()
 end)
 
+CombatSection:NewButton("Give me Hammer", "", function()
+local TpPart = Instance.new("Part", workspace)
+TpPart.CanCollide = false;
+TpPart.Anchored = true;
+TpPart.Transparency = 1;
+TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+TpPart.Name = "Tp"
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(773.242554, 98.1899185, 2526.82153, 0.99983567, -1.59206355e-08, -0.0181274265, 1.4928121e-08, 1, -5.48873587e-08, 0.0181274265, 5.46077317e-08, 0.99983567)
+wait(0.5)
+local args = {
+    [1] = workspace.Prison_ITEMS.single.Hammer.ITEMPICKUP
+}
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+workspace.Tp:Destroy()
+end)
+
+CombatSection:NewButton("Give me Crude Knife", "", function()
+local TpPart = Instance.new("Part", workspace)
+TpPart.CanCollide = false;
+TpPart.Anchored = true;
+TpPart.Transparency = 1;
+TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+TpPart.Name = "Tp"
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(902.413147, 99.989975, 2380.67285, 0.947083116, 0, 0.320988387, 0, 1, 0, -0.320988387, 0, 0.947083116)
+wait(0.5)
+local args = {
+    [1] = workspace.Prison_ITEMS.single:FindFirstChild("Crude Knife").ITEMPICKUP
+}
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+workspace.Tp:Destroy()
+end)
+
 CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
