@@ -102,7 +102,7 @@ local args = {
     [1] = "Bright blue"
 }
 workspace.Remote.TeamEvent:FireServer(unpack(args))
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
