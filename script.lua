@@ -224,7 +224,7 @@ TpPart.Anchored = true;
 TpPart.Transparency = 1;
 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 TpPart.Name = "Tp"
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(902.413147, 99.989975, 2380.67285, 0.947083116, 0, 0.320988387, 0, 1, 0, -0.320988387, 0, 0.947083116)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(704.197205, 97.9999237, 2502.78296, 0.0508423075, 4.51428122e-08, -0.998706698, -7.11167019e-08, 1, 4.15808508e-08, 0.998706698, 6.89106585e-08, 0.0508423075)
 wait(0.5)
 local args = {
     [1] = workspace.Prison_ITEMS.single:FindFirstChild("Crude Knife").ITEMPICKUP
