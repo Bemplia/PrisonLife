@@ -78,7 +78,7 @@ if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
         [1] = "Bright orange"
     }
     workspace.Remote.TeamEvent:FireServer(unpack(args))
-    wait(0.3)
+    wait(0.2)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
     workspace.Kill:Destroy()
 end
@@ -91,13 +91,13 @@ end)
 
 MainSection:NewButton("Spawn KeyCards and M9", "", function()
 spawn = false
-for i = 0, 9 do
 local TpPart = Instance.new("Part", workspace)
 TpPart.CanCollide = false;
 TpPart.Anchored = true;
 TpPart.Transparency = 1;
 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 TpPart.Name = "Spawn"
+for i = 0, 9 do
 local args = {
     [1] = "Bright blue"
 }
@@ -111,7 +111,7 @@ local args = {
 }
 workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 workspace.Spawn:Destroy()
 end)
