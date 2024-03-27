@@ -253,9 +253,7 @@ CombatSection:NewButton("Kill aura", "", function()
 killaura = true
 while killaura do
 for i, v in pairs(game.Players:GetChildren()) do
-if v.Name == game.Players.LocalPlayer.Name then
-print("Im not killing me.")
-else
+if v.Name ~= game.Players.LocalPlayer.Name then
 for i = 0, 14 do
 local args = {
     [1] = game.Players[v.Name]
