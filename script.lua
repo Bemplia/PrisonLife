@@ -1,7 +1,6 @@
 local walkspeed = 24
 local target = ""
 local spawn = false
-local killaura = false
 
 local AutoFireM9 = false
 local BulletsM9 = 1
@@ -78,7 +77,7 @@ if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
         [1] = "Bright orange"
     }
     workspace.Remote.TeamEvent:FireServer(unpack(args))
-    wait(0.25)
+    wait(0.2)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
     workspace.Kill:Destroy()
 end
@@ -102,16 +101,16 @@ local args = {
     [1] = "Bright blue"
 }
 workspace.Remote.TeamEvent:FireServer(unpack(args))
-wait(0.25)
+wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
-wait(0.25)
+wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 local args = {
     [1] = "Bright orange"
 }
 workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
-wait(0.25)
+wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 workspace.Spawn:Destroy()
 end)
@@ -249,28 +248,19 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
-CombatSection:NewKeybind("Prison target", "", Enum.KeyCode.X, function()
-local args = {
-    [1] = game:GetService("Players")[target].Character.HumanoidRootPart
-}    
-workspace.Remote.arrest:InvokeServer(unpack(args))    
-end)
-
 CombatSection:NewToggle("Kill aura", "", function(killaura)
 if killaura then
 while wait(0.5) do
+if killaura == false then break end
 for i, v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i = 0, 14 do
 local args = {
-    [1] = game.Players[v.Name]
+    [1] = v
 }    
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end
-end
-if killaura == false then
-break
 end
 end
 end
