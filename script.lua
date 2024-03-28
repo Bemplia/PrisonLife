@@ -249,8 +249,7 @@ end
 end)
 
 CombatSection:NewToggle("Kill aura", "", function(killaura)
-if killaura then
-while wait(0.5) do
+while killaura do
 if killaura == false then break end
 for i, v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
@@ -262,7 +261,7 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end
 end
-end
+wait(0.5)
 end
 end)
 
