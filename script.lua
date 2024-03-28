@@ -1,6 +1,7 @@
 local walkspeed = 24
 local target = ""
 local spawn = false
+local killaura = false
 
 local AutoFireM9 = false
 local BulletsM9 = 1
@@ -248,21 +249,28 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
-CombatSection:NewToggle("Kill aura", "", function(killaura)
+CombatSection:NewButton("Kill aura", "", function()
+killaura = true
 while killaura do
-if killaura == false then break end
 for i, v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i = 0, 14 do
 local args = {
-    [1] = v
+    [1] = game.Players[v.Name]
 }    
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end
 end
+if killaura == false then
+break
+end
 wait(0.5)
 end
+end)
+
+CombatSection:NewButton("Disable KillAura", "", function()
+killaura = false
 end)
 
 M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
