@@ -249,9 +249,16 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
-CombatSection:NewButton("Kill aura", "", function()
-killaura = true
-while killaura do
+CombatSection:NewKeybind("Prison target", "", Enum.KeyCode.X, function()
+local args = {
+    [1] = game:GetService("Players")[target].Character.HumanoidRootPart
+}    
+workspace.Remote.arrest:InvokeServer(unpack(args))    
+end)
+
+CombatSection:NewToggle("Kill aura", "", function(killaura)
+if killaura then
+while wait(0.5) do
 for i, v in pairs(game.Players:GetChildren()) do
 if v.Name ~= game.Players.LocalPlayer.Name then
 for i = 0, 14 do
@@ -265,12 +272,8 @@ end
 if killaura == false then
 break
 end
-wait(0.5)
 end
-end)
-
-CombatSection:NewButton("Disable KillAura", "", function()
-killaura = false
+end
 end)
 
 M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
