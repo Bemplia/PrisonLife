@@ -230,7 +230,7 @@ TpPart.Anchored = true;
 TpPart.Transparency = 1;
 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 TpPart.Name = "Tp"
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(704.197205, 97.9999237, 2502.78296, 0.0508423075, 4.51428122e-08, -0.998706698, -7.11167019e-08, 1, 4.15808508e-08, 0.998706698, 6.89106585e-08, 0.0508423075)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(707.389404, 101.799995, 2500.04858, -0.99999851, 6.67142572e-08, -0.00174122176, 6.66650024e-08, 1, 2.83477597e-08, 0.00174122176, 2.82316375e-08, -0.99999851)
 wait(0.5)
 local args = {
     [1] = workspace.Prison_ITEMS.single:FindFirstChild("Crude Knife").ITEMPICKUP
@@ -300,8 +300,8 @@ killaura = true
 while killaura do
 for i, v in pairs(game.Players:GetChildren()) do
 if v ~= game.Players.LocalPlayer then
-if v == game.Players[friend] then
 if friendenable then
+if v ~= game.Players[friend] then
 for i = 0, 14 do
 local args = {
     [1] = game.Players[v.Name]
