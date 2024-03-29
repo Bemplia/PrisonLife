@@ -267,19 +267,19 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.2)
                 local args3 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -294,13 +294,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
@@ -315,13 +315,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.2)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -336,7 +336,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
@@ -351,13 +351,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.2)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -372,7 +372,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
@@ -387,7 +387,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.2)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
