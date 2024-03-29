@@ -251,13 +251,14 @@ giveak47 = false
 end
 end)
 
-CombatSection:NewButton("Active huita", "", function()
+CombatSection:NewToggle("Active huita", "", function(huy)
+if huy then
     while wait() do
         if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
             if spawn then
-                wait(0.25)
+                wait(0.4)
             elseif spawn == false then
-                wait(2)
+                wait(1.8)
             end
             if givem9 and giveremington870 and giveak47 then
                 local TpPart = Instance.new("Part", workspace)
@@ -267,19 +268,19 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.25)
                 local args3 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -294,13 +295,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
@@ -315,13 +316,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.25)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -336,7 +337,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
@@ -351,13 +352,13 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.25)
                 local args2 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -372,7 +373,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
                 }
@@ -387,7 +388,7 @@ CombatSection:NewButton("Active huita", "", function()
                 TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
                 TpPart.Name = "Tp"
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-                wait(0.16)
+                wait(0.25)
                 local args1 = {
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
                 }
@@ -396,7 +397,9 @@ CombatSection:NewButton("Active huita", "", function()
                 workspace.Tp:Destroy()
             end
         end
+        if huy == false then break end
     end
+end
 end)
 
 CombatSection:NewTextBox("Target", "", function(tar)
@@ -454,7 +457,8 @@ CombatSection:NewToggle("Kill aura on Friend", "", function(turn)
     end
 end)
 
-CombatSection:NewButton("Kill aura", "", function()
+CombatSection:NewToggle("Kill aura", "", function(aura)
+if aura then
     while wait(0.5) do
         for i, v in pairs(game.Players:GetChildren()) do
             if v ~= game.Players.LocalPlayer then
@@ -497,7 +501,9 @@ CombatSection:NewButton("Kill aura", "", function()
                 end
             end
         end
+        if aura == false then break end
     end
+end
 end)
 
 M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
