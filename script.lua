@@ -251,8 +251,7 @@ giveak47 = false
 end
 end)
 
-CombatSection:NewToggle("Active huita", "", function(huy)
-if huy then
+CombatSection:NewButton("Active huita", "", function()
     while wait() do
         if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
             if spawn then
@@ -399,9 +398,6 @@ if huy then
         end
         if huy == false then break end
     end
-else
-    print("Disable")
-end
 end)
 
 CombatSection:NewTextBox("Target", "", function(tar)
@@ -459,8 +455,7 @@ CombatSection:NewToggle("Kill aura on Friend", "", function(turn)
     end
 end)
 
-CombatSection:NewToggle("Kill aura", "", function(aura)
-if aura then
+CombatSection:NewButton("Kill aura", "", function()
     while wait(0.5) do
         if aura == false then return end
         for i, v in pairs(game.Players:GetChildren()) do
@@ -505,9 +500,6 @@ if aura then
             end
         end
     end
-else
-    print("Disable")
-end
 end)
 
 M9_Section:NewTextBox("AutoFire", "true/false", function(fire)
