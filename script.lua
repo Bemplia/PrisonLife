@@ -1,11 +1,13 @@
 local walkspeed = 24
 local target = ""
+local friend = ""
 local spawn = false
 local killaura = false
 
 local guardsenable = false
 local inmatesenable = false
 local criminalsenable = false
+local friendenable = false
 
 local AutoFireM9 = false
 local BulletsM9 = 1
@@ -241,6 +243,10 @@ end)
 CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
+
+CombatSection:NewTextBox("Friend", "", function(fr)
+friend = fr
+end)
     
 CombatSection:NewKeybind("Kill target", "", Enum.KeyCode.Z, function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
@@ -281,12 +287,29 @@ CombatSection:NewToggle("Kill aura on Criminals", "", function(turn)
     end
 end)
 
+CombatSection:NewToggle("Kill aura on Friend", "", function(turn)
+    if turn then
+        friendenable = true
+    else
+        friendenable = false
+    end
+end)
+
 CombatSection:NewButton("Kill aura", "", function()
 killaura = true
 while killaura do
 for i, v in pairs(game.Players:GetChildren()) do
 if v ~= game.Players.LocalPlayer then
-if v.Team == game:GetService("Teams")["Guards"] then
+if v == game.Players[friend] then
+if friendenable then
+for i = 0, 14 do
+local args = {
+    [1] = game.Players[v.Name]
+}    
+game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
+elseif v.Team == game:GetService("Teams")["Guards"] then
 if guardsenable then
 for i = 0, 14 do
 local args = {
@@ -295,8 +318,7 @@ local args = {
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end
-end
-if v.Team == game:GetService("Teams")["Inmates"] then
+elseif v.Team == game:GetService("Teams")["Inmates"] then
 if inmatesenable then
 for i = 0, 14 do
 local args = {
@@ -305,8 +327,7 @@ local args = {
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end
-end
-if v.Team == game:GetService("Teams")["Criminals"] then
+elseif v.Team == game:GetService("Teams")["Criminals"] then
 if criminalsenable then
 for i = 0, 14 do
 local args = {
