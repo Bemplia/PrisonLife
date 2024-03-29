@@ -255,7 +255,7 @@ CombatSection:NewButton("Active huita", "", function()
     while wait() do
         if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
             if spawn then
-                wait(0.25)
+                wait(0.4)
             elseif spawn == false then
                 wait(2)
             end
