@@ -3,6 +3,10 @@ local target = ""
 local spawn = false
 local killaura = false
 
+local guardsenable = false
+local inmatesenable = false
+local criminalsenable = false
+
 local AutoFireM9 = false
 local BulletsM9 = 1
 local RangeM9 = 600
@@ -111,7 +115,7 @@ local args = {
 }
 workspace.Remote.TeamEvent:FireServer(unpack(args))
 end
-wait(0.25)
+wait(0.2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Spawn.CFrame
 workspace.Spawn:Destroy()
 end)
@@ -253,16 +257,64 @@ CombatSection:NewKeybind("Teleport to target", "", Enum.KeyCode.X, function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
 end)
 
+CombatSection:NewToggle("Kill aura on Guards", "", function(turn)
+if turn then
+    guardsenable = true
+else
+    guardsenable = false
+end
+end)
+
+CombatSection:NewToggle("Kill aura on Inmates", "", function(turn)
+    if turn then
+        inmatesenable = true
+    else
+        inmatesenable = false
+    end
+end)
+
+CombatSection:NewToggle("Kill aura on Criminals", "", function(turn)
+    if turn then
+        criminalsenable = true
+    else
+        criminalsenable = false
+    end
+end)
+
 CombatSection:NewButton("Kill aura", "", function()
 killaura = true
 while killaura do
 for i, v in pairs(game.Players:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
+if v ~= game.Players.LocalPlayer then
+if v.Team == game:GetService("Teams")["Guards"] then
+if guardsenable then
 for i = 0, 14 do
 local args = {
     [1] = game.Players[v.Name]
 }    
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
+end
+if v.Team == game:GetService("Teams")["Inmates"] then
+if inmatesenable then
+for i = 0, 14 do
+local args = {
+    [1] = game.Players[v.Name]
+}    
+game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
+end
+if v.Team == game:GetService("Teams")["Criminals"] then
+if criminalsenable then
+for i = 0, 14 do
+local args = {
+    [1] = game.Players[v.Name]
+}    
+game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+end
+end
 end
 end
 end
