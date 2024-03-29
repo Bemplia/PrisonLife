@@ -341,6 +341,8 @@ CombatSection:NewButton("Active huita", "", function()
                     [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
                 }
                 workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
             elseif giveremington870 and giveak47 then
                 local TpPart = Instance.new("Part", workspace)
                 TpPart.CanCollide = false;
