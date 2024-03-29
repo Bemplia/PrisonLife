@@ -40,192 +40,6 @@ local MaxAmmoAK47 = 30
 local DamageAK47 = 11
 local ReloadTimeAK47 = 2
 
-while wait() do
-    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-        if spawn then
-            wait(0.25)
-        elseif spawn == false then
-            wait(2)
-        end
-        if givem9 and giveremington870 and giveak47 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args2 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-            wait(0.16)
-            local args3 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args3))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
-            workspace.Tp:Destroy()
-        elseif givem9 and giveremington870 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args2 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
-            workspace.Tp:Destroy()
-        elseif givem9 and giveak47 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-            wait(0.16)
-            local args2 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
-            workspace.Tp:Destroy()
-        elseif givem9 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-        elseif giveremington870 and giveak47 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-            wait(0.16)
-            local args2 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
-            workspace.Tp:Destroy()
-        elseif giveremington870 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-        elseif giveak47 then
-            local TpPart = Instance.new("Part", workspace)
-            TpPart.CanCollide = false;
-            TpPart.Anchored = true;
-            TpPart.Transparency = 1;
-            TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-            TpPart.Name = "Tp"
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
-            wait(0.16)
-            local args1 = {
-                [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
-            }
-            workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
-            workspace.Tp:Destroy()
-        end
-    end
-end
-
-while wait(0.5) do
-    for i, v in pairs(game.Players:GetChildren()) do
-        if v ~= game.Players.LocalPlayer then
-            if friendenable then
-                if v ~= game.Players[friend] then
-                        for i = 0, 14 do
-                            local args = {
-                                [1] = game.Players[v.Name]
-                            }    
-                            game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-                        end
-                    end
-                    elseif v.Team == game:GetService("Teams")["Guards"] then
-                        if guardsenable then
-                            for i = 0, 14 do
-                                local args = {
-                                    [1] = game.Players[v.Name]
-                                }    
-                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-                            end
-                        end
-                    elseif v.Team == game:GetService("Teams")["Inmates"] then
-                        if inmatesenable then
-                            for i = 0, 14 do
-                                local args = {
-                                    [1] = game.Players[v.Name]
-                                }    
-                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-                            end
-                        end
-                    elseif v.Team == game:GetService("Teams")["Criminals"] then
-                    if criminalsenable then
-                    for i = 0, 14 do
-                        local args = {
-                            [1] = game.Players[v.Name]
-                        }    
-                        game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-                    end
-                end
-            end
-        end
-    end
-end
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 local Window = Library.CreateLib("Prison Life v2 (By arbuzik.new)", "Ocean")
@@ -437,6 +251,150 @@ giveak47 = false
 end
 end)
 
+CombatSection:NewButton("Active huita", "", function()
+    while wait() do
+        if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+            if spawn then
+                wait(0.25)
+            elseif spawn == false then
+                wait(2)
+            end
+            if givem9 and giveremington870 and giveak47 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args2 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
+                wait(0.16)
+                local args3 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args3))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
+            elseif givem9 and giveremington870 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args2 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
+            elseif givem9 and giveak47 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
+                wait(0.16)
+                local args2 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
+            elseif givem9 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("M9").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+            elseif giveremington870 and giveak47 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
+                wait(0.16)
+                local args2 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args2))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
+            elseif giveremington870 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(823.720032, 100.999992, 2251.27563, 0.999391854, -7.39001322e-08, 0.0348692648, 7.57053229e-08, 1, -5.04499056e-08, -0.0348692648, 5.3059015e-08, 0.999391854)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+            elseif giveak47 then
+                local TpPart = Instance.new("Part", workspace)
+                TpPart.CanCollide = false;
+                TpPart.Anchored = true;
+                TpPart.Transparency = 1;
+                TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+                TpPart.Name = "Tp"
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943.538391, 94.1287613, 2055.99658, -0.999999642, 2.34073134e-08, -0.000844621565, 2.3361963e-08, 1, 5.3703392e-08, 0.000844621565, 5.36836424e-08, -0.999999642)
+                wait(0.16)
+                local args1 = {
+                    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+                }
+                workspace.Remote.ItemHandler:InvokeServer(unpack(args1))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
+                workspace.Tp:Destroy()
+            end
+        end
+    end
+end)
+
 CombatSection:NewTextBox("Target", "", function(tar)
 target = tar
 end)
@@ -489,6 +447,52 @@ CombatSection:NewToggle("Kill aura on Friend", "", function(turn)
         friendenable = true
     else
         friendenable = false
+    end
+end)
+
+CombatSection:NewButton("Kill aura", "", function()
+    while wait(0.5) do
+        for i, v in pairs(game.Players:GetChildren()) do
+            if v ~= game.Players.LocalPlayer then
+                if friendenable then
+                    if v ~= game.Players[friend] then
+                            for i = 0, 14 do
+                                local args = {
+                                    [1] = game.Players[v.Name]
+                                }    
+                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                            end
+                        end
+                        elseif v.Team == game:GetService("Teams")["Guards"] then
+                            if guardsenable then
+                                for i = 0, 14 do
+                                    local args = {
+                                        [1] = game.Players[v.Name]
+                                    }    
+                                    game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                                end
+                            end
+                        elseif v.Team == game:GetService("Teams")["Inmates"] then
+                            if inmatesenable then
+                                for i = 0, 14 do
+                                    local args = {
+                                        [1] = game.Players[v.Name]
+                                    }    
+                                    game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                                end
+                            end
+                        elseif v.Team == game:GetService("Teams")["Criminals"] then
+                        if criminalsenable then
+                        for i = 0, 14 do
+                            local args = {
+                                [1] = game.Players[v.Name]
+                            }    
+                            game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
+                        end
+                    end
+                end
+            end
+        end
     end
 end)
 
