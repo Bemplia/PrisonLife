@@ -249,6 +249,10 @@ game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
 end)
 
+CombatSection:NewKeybind("Teleport to target", "", Enum.KeyCode.X, function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
+end)
+
 CombatSection:NewButton("Kill aura", "", function()
 killaura = true
 while killaura do
