@@ -258,7 +258,7 @@ if huy then
             if spawn then
                 wait(0.4)
             elseif spawn == false then
-                wait(1.8)
+                wait(2)
             end
             if givem9 and giveremington870 and giveak47 then
                 local TpPart = Instance.new("Part", workspace)
@@ -399,6 +399,8 @@ if huy then
         end
         if huy == false then break end
     end
+else
+    print("Disable")
 end
 end)
 
@@ -460,6 +462,7 @@ end)
 CombatSection:NewToggle("Kill aura", "", function(aura)
 if aura then
     while wait(0.5) do
+        if aura == false then return end
         for i, v in pairs(game.Players:GetChildren()) do
             if v ~= game.Players.LocalPlayer then
                 if friendenable then
@@ -501,8 +504,9 @@ if aura then
                 end
             end
         end
-        if aura == false then break end
     end
+else
+    print("Disable")
 end
 end)
 
