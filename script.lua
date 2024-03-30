@@ -401,7 +401,7 @@ CombatSection:NewButton("give guns while spawning", "", function()
 end)
 
 CombatSection:NewButton("Esp", "", function()
-    while wait(5) do
+    while true do
         for i,v in pairs(game.Players:GetChildren()) do
             if v ~= game.Players.LocalPlayer then
                 if v.Character.Torso:FindFirstChild("BoxHandleAdornment") == nil and v.Character:FindFirstChild("BillboardGui") == nil then 
@@ -434,6 +434,7 @@ CombatSection:NewButton("Esp", "", function()
                 end
             end
         end
+        wait(3)
     end
 end)
 
