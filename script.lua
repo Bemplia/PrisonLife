@@ -227,7 +227,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Tp.CFrame
 workspace.Tp:Destroy()
 end)
 
-CombatSection:NewToggle("huita m9", "", function(turn)
+CombatSection:NewToggle("give m9 while spawning", "", function(turn)
 if turn then
 givem9 = true
 else
@@ -235,7 +235,7 @@ givem9 = false
 end
 end)
 
-CombatSection:NewToggle("huita remington870", "", function(turn)
+CombatSection:NewToggle("give remington870 while spawning", "", function(turn)
 if turn then
 giveremington870 = true
 else
@@ -243,7 +243,7 @@ giveremington870 = false
 end
 end)
 
-CombatSection:NewToggle("huita ak47", "", function(turn)
+CombatSection:NewToggle("give ak47 while spawning", "", function(turn)
 if turn then
 giveak47 = true
 else
@@ -251,7 +251,7 @@ giveak47 = false
 end
 end)
 
-CombatSection:NewButton("Active huita", "", function()
+CombatSection:NewButton("give guns while spawning", "", function()
     while wait() do
         if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
             if spawn then
@@ -397,6 +397,43 @@ CombatSection:NewButton("Active huita", "", function()
             end
         end
         if huy == false then break end
+    end
+end)
+
+CombatSection:NewButton("Esp", "", function()
+    while wait(5) do
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v ~= game.Players.LocalPlayer then
+                if v.Character.Torso:FindFirstChild("BoxHandleAdornment") == nil and v.Character:FindFirstChild("BillboardGui") == nil then 
+                    local esp = Instance.new("BoxHandleAdornment", v.Character.Torso)
+                    local BillboardGui = Instance.new("BillboardGui", v.Character)
+                    local TextLabel = Instance.new("TextLabel", BillboardGui)
+                    esp.Adornee = v.Character.Torso
+                    esp.ZIndex = 0
+                    esp.AlwaysOnTop = true
+                    esp.Transparency = 0.7
+                    esp.Size = Vector3.new(1.7,4.7,1)
+                    BillboardGui.AlwaysOnTop = true
+                    BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                    BillboardGui.StudsOffset = Vector3.new(0, 3, 0)
+                    TextLabel.BackgroundTransparency = 1
+                    TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                    TextLabel.Text = v.Name
+                    TextLabel.TextStrokeTransparency = 0
+                    TextLabel.TextSize = 6
+                    if v.Team == game:GetService("Teams")["Inmates"] then
+                        esp.Color3 = Color3.fromRGB(255, 145, 0)
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 145, 0)
+                    elseif v.Team == game:GetService("Teams")["Guards"] then
+                        esp.Color3 = Color3.fromRGB(0, 140, 255)
+                        TextLabel.TextColor3 = Color3.fromRGB(0, 140, 255)
+                    elseif v.Team == game:GetService("Teams")["Criminals"] then
+                        esp.Color3 = Color3.fromRGB(190, 0, 30)
+                        TextLabel.TextColor3 = Color3.fromRGB(190, 0, 30)
+                    end
+                end
+            end
+        end
     end
 end)
 
