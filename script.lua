@@ -402,38 +402,40 @@ end)
 
 CombatSection:NewButton("Esp", "", function()
     while true do
-        for i,v in pairs(game.Players:GetChildren()) do
-            if v ~= game.Players.LocalPlayer then
-                if v.Character.Torso:FindFirstChild("BoxHandleAdornment") == nil and v.Character:FindFirstChild("BillboardGui") == nil then 
-                    local esp = Instance.new("BoxHandleAdornment", v.Character.Torso)
-                    local BillboardGui = Instance.new("BillboardGui", v.Character)
-                    local TextLabel = Instance.new("TextLabel", BillboardGui)
-                    esp.Adornee = v.Character.Torso
-                    esp.ZIndex = 0
-                    esp.AlwaysOnTop = true
-                    esp.Transparency = 0.7
-                    esp.Size = Vector3.new(1.7,4.7,1)
-                    BillboardGui.AlwaysOnTop = true
-                    BillboardGui.Size = UDim2.new(0, 200, 0, 50)
-                    BillboardGui.StudsOffset = Vector3.new(0, 3, 0)
-                    TextLabel.BackgroundTransparency = 1
-                    TextLabel.Size = UDim2.new(0, 200, 0, 50)
-                    TextLabel.Text = v.Name
-                    TextLabel.TextStrokeTransparency = 0
-                    TextLabel.TextSize = 6
-                    if v.Team == game:GetService("Teams")["Inmates"] then
-                        esp.Color3 = Color3.fromRGB(255, 145, 0)
-                        TextLabel.TextColor3 = Color3.fromRGB(255, 145, 0)
-                    elseif v.Team == game:GetService("Teams")["Guards"] then
-                        esp.Color3 = Color3.fromRGB(0, 140, 255)
-                        TextLabel.TextColor3 = Color3.fromRGB(0, 140, 255)
-                    elseif v.Team == game:GetService("Teams")["Criminals"] then
-                        esp.Color3 = Color3.fromRGB(190, 0, 30)
-                        TextLabel.TextColor3 = Color3.fromRGB(190, 0, 30)
+        pcall(function()
+            for i,v in pairs(game.Players:GetChildren()) do
+                if v ~= game.Players.LocalPlayer then
+                    if v.Character.Torso:FindFirstChild("BoxHandleAdornment") == nil and v.Character:FindFirstChild("BillboardGui") == nil then 
+                        local esp = Instance.new("BoxHandleAdornment", v.Character.Torso)
+                        local BillboardGui = Instance.new("BillboardGui", v.Character)
+                        local TextLabel = Instance.new("TextLabel", BillboardGui)
+                        esp.Adornee = v.Character.Torso
+                        esp.ZIndex = 0
+                        esp.AlwaysOnTop = true
+                        esp.Transparency = 0.7
+                        esp.Size = Vector3.new(1.7,4.7,1)
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                        BillboardGui.StudsOffset = Vector3.new(0, 3, 0)
+                        TextLabel.BackgroundTransparency = 1
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Text = v.Name
+                        TextLabel.TextStrokeTransparency = 0
+                        TextLabel.TextSize = 6
+                        if v.Team == game:GetService("Teams")["Inmates"] then
+                            esp.Color3 = Color3.fromRGB(255, 145, 0)
+                            TextLabel.TextColor3 = Color3.fromRGB(255, 145, 0)
+                        elseif v.Team == game:GetService("Teams")["Guards"] then
+                            esp.Color3 = Color3.fromRGB(0, 140, 255)
+                            TextLabel.TextColor3 = Color3.fromRGB(0, 140, 255)
+                        elseif v.Team == game:GetService("Teams")["Criminals"] then
+                            esp.Color3 = Color3.fromRGB(190, 0, 30)
+                            TextLabel.TextColor3 = Color3.fromRGB(190, 0, 30)
+                        end
                     end
                 end
             end
-        end
+        end)
         wait(3)
     end
 end)
