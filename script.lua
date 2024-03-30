@@ -494,7 +494,7 @@ CombatSection:NewButton("Kill aura", "", function()
     while wait(0.5) do
         if aura == false then return end
         for i, v in pairs(game.Players:GetChildren()) do
-            if v ~= game.Players.LocalPlayer and v ~= game.Players[friend] then
+            if v ~= game.Players.LocalPlayer and v ~= game.Players:FindFirstChild(friend) then
                         if v.Team == game:GetService("Teams")["Guards"] then
                             if guardsenable then
                                 for i = 0, 14 do
