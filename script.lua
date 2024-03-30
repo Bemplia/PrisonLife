@@ -71,32 +71,35 @@ game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Playe
 end)
 
 MainSection:NewButton("Quick respawn", "", function()
-spawn = true
-while spawn do
-if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-    local TpPart = Instance.new("Part", workspace)
-    TpPart.CanCollide = false;
-    TpPart.Anchored = true;
-    TpPart.Transparency = 1;
-    TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
-    TpPart.Name = "Kill"
-    local args = {
-        [1] = "Bright blue"
-    }
-    workspace.Remote.TeamEvent:FireServer(unpack(args))
-    local args = {
-        [1] = "Bright orange"
-    }
-    workspace.Remote.TeamEvent:FireServer(unpack(args))
-    wait(0.3)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
-    workspace.Kill:Destroy()
-end
-if spawn == false then
-break
-end
-wait()
-end
+    spawn = true
+    while spawn do
+    if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health == 0 then
+        local TpPart = Instance.new("Part", workspace)
+        TpPart.CanCollide = false;
+        TpPart.Anchored = true;
+        TpPart.Transparency = 1;
+        TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
+        TpPart.Name = "Kill"
+        if game.Players.LocalPlayer.Team == game:GetService("Teams")["Guards"] then
+            local args = {
+                [1] = "Bright blue"
+            }
+        elseif game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
+        workspace.Remote.TeamEvent:FireServer(unpack(args))
+        local args = {
+            [1] = "Bright orange"
+        }
+        end 
+        workspace.Remote.TeamEvent:FireServer(unpack(args))
+        wait(0.3)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
+        workspace.Kill:Destroy()
+    end
+    if spawn == false then
+    break
+    end
+    wait()
+    end
 end)
 
 MainSection:NewButton("Spawn KeyCards and M9", "", function()
@@ -487,29 +490,12 @@ CombatSection:NewToggle("Kill aura on Criminals", "", function(turn)
     end
 end)
 
-CombatSection:NewToggle("Kill aura on Friend", "", function(turn)
-    if turn then
-        friendenable = true
-    else
-        friendenable = false
-    end
-end)
-
 CombatSection:NewButton("Kill aura", "", function()
     while wait(0.5) do
         if aura == false then return end
         for i, v in pairs(game.Players:GetChildren()) do
-            if v ~= game.Players.LocalPlayer then
-                if friendenable then
-                    if v ~= game.Players[friend] then
-                            for i = 0, 14 do
-                                local args = {
-                                    [1] = game.Players[v.Name]
-                                }    
-                                game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
-                            end
-                        end
-                        elseif v.Team == game:GetService("Teams")["Guards"] then
+            if v ~= game.Players.LocalPlayer and v ~= game.Players[friend] then
+                        if v.Team == game:GetService("Teams")["Guards"] then
                             if guardsenable then
                                 for i = 0, 14 do
                                     local args = {
