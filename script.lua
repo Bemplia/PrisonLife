@@ -80,22 +80,10 @@ MainSection:NewButton("Quick respawn", "", function()
         TpPart.Transparency = 1;
         TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
         TpPart.Name = "Kill"
-        if game.Players.LocalPlayer.Team == game:GetService("Teams")["Guards"] then
-            local args1 = {
-                [1] = "Bright blue"
-            }
-            workspace.Remote.TeamEvent:FireServer(unpack(args1))
-        elseif game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
-            local args2 = {
-                [1] = "Bright orange"
-            }
-            workspace.Remote.TeamEvent:FireServer(unpack(args2))
-        elseif game.Players.LocalPlayer.Team == game:GetService("Teams")["Criminals"] then
-            local args3 = {
-                [1] = "Bright orange"
-            }
-            workspace.Remote.TeamEvent:FireServer(unpack(args3))
-        end 
+        local args = {
+            [1] = "Bright orange"
+        }
+        workspace.Remote.TeamEvent:FireServer(unpack(args))
         wait(0.3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
         workspace.Kill:Destroy()
@@ -810,3 +798,5 @@ end)
 GuiSection:NewKeybind("Toggle Gui", "", Enum.KeyCode.L, function()
 Library:ToggleUI()
 end)
+
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/PrisonLife/main/script.lua"))()
