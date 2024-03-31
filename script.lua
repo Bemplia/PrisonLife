@@ -90,7 +90,7 @@ MainSection:NewButton("Quick respawn", "", function()
                 [1] = "Bright orange"
             }
             workspace.Remote.TeamEvent:FireServer(unpack(args2))
-        else game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
+        else
             local args3 = {
                 [1] = "Bright orange"
             }
