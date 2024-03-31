@@ -81,20 +81,20 @@ MainSection:NewButton("Quick respawn", "", function()
         TpPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
         TpPart.Name = "Kill"
         if game.Players.LocalPlayer.Team == game:GetService("Teams")["Guards"] then
-            local args = {
+            local args1 = {
                 [1] = "Bright blue"
             }
-            workspace.Remote.TeamEvent:FireServer(unpack(args))
+            workspace.Remote.TeamEvent:FireServer(unpack(args1))
         elseif game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
-            local args = {
+            local args2 = {
                 [1] = "Bright orange"
             }
-            workspace.Remote.TeamEvent:FireServer(unpack(args))
+            workspace.Remote.TeamEvent:FireServer(unpack(args2))
         else game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
-            local args = {
+            local args3 = {
                 [1] = "Bright orange"
             }
-            workspace.Remote.TeamEvent:FireServer(unpack(args))
+            workspace.Remote.TeamEvent:FireServer(unpack(args3))
         end 
         wait(0.3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
