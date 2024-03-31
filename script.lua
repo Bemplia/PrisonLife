@@ -84,13 +84,18 @@ MainSection:NewButton("Quick respawn", "", function()
             local args = {
                 [1] = "Bright blue"
             }
+            workspace.Remote.TeamEvent:FireServer(unpack(args))
         elseif game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
-        workspace.Remote.TeamEvent:FireServer(unpack(args))
-        local args = {
-            [1] = "Bright orange"
-        }
+            local args = {
+                [1] = "Bright orange"
+            }
+            workspace.Remote.TeamEvent:FireServer(unpack(args))
+        else game.Players.LocalPlayer.Team == game:GetService("Teams")["Inmates"] then
+            local args = {
+                [1] = "Bright orange"
+            }
+            workspace.Remote.TeamEvent:FireServer(unpack(args))
         end 
-        workspace.Remote.TeamEvent:FireServer(unpack(args))
         wait(0.3)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Kill.CFrame
         workspace.Kill:Destroy()
