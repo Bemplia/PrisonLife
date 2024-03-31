@@ -755,6 +755,13 @@ MovementSection:NewButton("Anti tazer", "", function()
 while wait(0.2) do
 if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 0 then
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkspeed
+if game.Players.LocalPlayer.Backpack:FindFirstChild("AK-47") ~= nil then
+    game.Players.LocalPlayer.Backpack["AK-47"].Parent = game.Players.LocalPlayer.Character\
+elseif game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870") ~= nil then
+    game.Players.LocalPlayer.Backpack["Remington 870"].Parent = game.Players.LocalPlayer.Character
+elseif game.Players.LocalPlayer.Backpack:FindFirstChild("M9") ~= nil then
+    game.Players.LocalPlayer.Backpack.M9.Parent = game.Players.LocalPlayer.Character
+end
 end
 end
 end)
@@ -798,5 +805,3 @@ end)
 GuiSection:NewKeybind("Toggle Gui", "", Enum.KeyCode.L, function()
 Library:ToggleUI()
 end)
-
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/Bemplia/PrisonLife/main/script.lua"))()
