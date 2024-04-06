@@ -1,4 +1,7 @@
+local uis = game:GetService("UserInputService")
+
 local walkspeed = 24
+local jump = 50
 local target = ""
 local friend = ""
 local spawn = false
@@ -418,16 +421,8 @@ CombatSection:NewButton("Esp", "", function()
                         TextLabel.Text = v.Name
                         TextLabel.TextStrokeTransparency = 0
                         TextLabel.TextSize = 6
-                        if v.Team == game:GetService("Teams")["Inmates"] then
-                            esp.Color3 = Color3.fromRGB(255, 145, 0)
-                            TextLabel.TextColor3 = Color3.fromRGB(255, 145, 0)
-                        elseif v.Team == game:GetService("Teams")["Guards"] then
-                            esp.Color3 = Color3.fromRGB(0, 140, 255)
-                            TextLabel.TextColor3 = Color3.fromRGB(0, 140, 255)
-                        elseif v.Team == game:GetService("Teams")["Criminals"] then
-                            esp.Color3 = Color3.fromRGB(190, 0, 30)
-                            TextLabel.TextColor3 = Color3.fromRGB(190, 0, 30)
-                        end
+                        esp.Color3 = v.TeamColor.Color
+                        TextLabel.TextColor3 = v.TeamColor.Color
                     end
                 end
             end
@@ -453,6 +448,15 @@ local args = {
 }    
 game:GetService("ReplicatedStorage").meleeEvent:FireServer(unpack(args))
 end
+end)
+
+CombatSection:NewKeybind("Arrest target", "", Enum.KeyCode.Q, function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[target].Character.HumanoidRootPart.CFrame
+wait(0.2)
+local args = {
+    [1] = game:GetService("Players")[target].Character.Torso
+}
+workspace.Remote.arrest:InvokeServer(unpack(args))
 end)
 
 CombatSection:NewKeybind("Teleport to target", "", Enum.KeyCode.X, function()
@@ -739,8 +743,9 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walk
 walkspeed = walk
 end)
 
-MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jump)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
+MovementSection:NewTextBox("JumpPower", "Change your jumppower", function(jum)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = jum
+jump = jum
 end)
 
 MovementSection:NewButton("Noclip", "", function()
@@ -749,6 +754,14 @@ game.Players.LocalPlayer.Character.Head.CanCollide = false
 game.Players.LocalPlayer.Character.Torso.CanCollide = false
 game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
 end
+end)
+
+MovementSection:NewButton("Infinity Jump", "", function()
+    uis.InputBegan:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.Space then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, jump, 0)
+        end
+    end)
 end)
 
 MovementSection:NewButton("Anti tazer", "", function()
