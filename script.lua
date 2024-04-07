@@ -748,6 +748,14 @@ game.Players.LocalPlayer.Character.Humanoid.JumpPower = jum
 jump = jum
 end)
 
+MovementSection:NewTextBox("Gravity", "", function(grav)
+game.Workspace.Gravity = grav
+end)
+
+MovementSection:NewButton("Set gravity to default value", "", function()
+game.Workspace.Gravity = 196.2
+end)
+
 MovementSection:NewButton("Noclip", "", function()
 while wait() do
 game.Players.LocalPlayer.Character.Head.CanCollide = false
