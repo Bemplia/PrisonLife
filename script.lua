@@ -488,7 +488,7 @@ CombatSection:NewToggle("Kill aura on Criminals", "", function(turn)
 end)
 
 CombatSection:NewButton("Kill aura", "", function()
-    while wait(0.5) do
+    while wait(0.1) do
         if aura == false then return end
         for i, v in pairs(game.Players:GetChildren()) do
             if v ~= game.Players.LocalPlayer and v ~= game.Players:FindFirstChild(friend) then
